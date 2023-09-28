@@ -1,0 +1,12 @@
+- hosts: all
+  roles:
+  - role: robertdebock.bootstrap
+    tags: [bootstrap]
+  - role: geerlingguy.nodejs
+    tags: [nodejs]
+  - role: nvm-config
+    tags: [nvm-config]
+  - role: foundry-init
+    tags: [foundry-init]
+  - role: foundry-deploy
+    tags: [foundry-deploy]
