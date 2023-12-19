@@ -12,6 +12,13 @@ provider "oci" {
   config_file_profile = "default"
 }
 
+resource "oci_core_vcn" "foundry_vcn" {
+    dns_label = "internal"
+    cidr_block = "172.16.0.0/20"
+    compartment_id = "<compartment-ocid>"
+    display_name = "foundry VCN"
+}
+
 resource "oci_core_instance" "ubuntu_instance" {
     availability_domain = data.oci_identity_availability_domains.ads.availability_domains[0].name
     compartment_id = "<compartment-ocid>"
